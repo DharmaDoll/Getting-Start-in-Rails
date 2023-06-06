@@ -10,8 +10,8 @@ RUN apt-get update -qq \
 
 
 # 作業ディレクトリの指定
-WORKDIR /myapp
-COPY myapp/Gemfile /myapp/Gemfile
+WORKDIR /Getting-Start-in-Rails/myapp
+COPY Gemfile /Getting-Start-in-Rails/myapp/
 # COPY Gemfile.lock /myapp/Gemfile.lock
 RUN bundle install
 # RUN bundle exec rails new .

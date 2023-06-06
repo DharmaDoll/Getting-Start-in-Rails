@@ -16,24 +16,27 @@ docker-compose up -d
 # Create rails application
 ```sh
 docker-compose exec web rails new .
+# Overwrite /Getting-Start-in-Rails/myapp/Gemfile? (enter "h" for help) [Ynaqdhm] n
+
 docker-compose exec web rails s -p 3000 -b '0.0.0.0'
 # https://qiita.com/mihooo24/items/250128057e108812a304
 ```
-visit to http://localhot:3000
+visit to http://localhost:3000
 
 # Login to container　(or `docker-compose exec web` command)
 ```sh
 docker exec -it rails_web bash
 ```
-## Generate application
+## Generate codes
 ```sh
 # Create endpoint
 rails generate controller Welcome index
-  create  app/controllers/welcome_controller.rb
-  route  get 'welcome/index'
-  create    app/views/welcome/index.html.erb
-  create    test/controllers/welcome_controller_test.rb
-  create    app/helpers/welcome_helper.rb
+  #create  app/controllers/welcome_controller.rb
+  #route  get 'welcome/index'
+  #create    app/views/welcome/index.html.erb
+  #create    test/controllers/welcome_controller_test.rb
+  #create    app/helpers/welcome_helper.rb
+
 # Use scaffold
 rails generate scaffold idea name:string desc:text
 rails db:migrate RAILS_ENV=development
@@ -46,7 +49,7 @@ rake stats
 rake --tasks
 rake stats
 rails routes
-rails c # Type more commands..
+rails c # Type more commands in console..
 ```
 
 # Generate and Migrate DB
@@ -78,9 +81,3 @@ ridgepole --config ./config/database.yml --file ./Schemafile --apply
 ```sh
 cat myapp/config/database.yml
 ```
-
-<!-- # Create application
-```
-root@21a7e94491af:/myapp# rails new .
-root@21a7e94491af:/myapp# bundle exec rails s -p 3000 -b '0.0.0.0' &
-``` -->

@@ -45,10 +45,10 @@ gem "bootsnap", require: false
 # Use Sass to process CSS
 # gem "sassc-rails"
 
-# スプレッドシートにアクセスする用
+# For google speedsheet
 gem "google-apis-sheets_v4"
 
-# saml連携・セッション管理用
+# Integration for saml and management session
 gem "activerecord-session_store"
 gem "ruby-saml"
 
